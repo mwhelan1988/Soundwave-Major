@@ -105,11 +105,17 @@ require_once("header.php");
 						<?php echo $account->getError(Constants::$loginFailed); ?>
 					
 					<div class="form-group">
-						<input class="form-control" id="loginEmail" name="loginEmail" type="text" placeholder="Enter Email" required>
+						<div class="input-icons">
+							    <i class="fas fa-envelope icons"></i>
+							<input class="form-control" id="loginEmail" name="loginEmail" type="text" placeholder="Enter Email" required>
+						</div>
 					</div>
 		
 					<div class="form-group">
-						<input class="form-control" id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+						<div class="input-icons">
+						    	<i class="fas fa-lock icons"></i>
+							<input class="form-control" id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+						</div>
 					</div>
 
 					<p class="float-left footer-button"><a href="/register.php">Register here.</a></p>

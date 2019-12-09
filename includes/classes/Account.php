@@ -53,8 +53,19 @@
 			$date = date ("Y-m-d");
 
 			$result = mysqli_query($this->conn, "INSERT INTO users 
+
+												(
+												firstName,
+												lastName,
+												email,
+												password,
+												date_created,
+												profilePic,
+												role
+												)
+
 												 VALUES
-												 	(NULL,
+												 	(
 													 '$fn',
 													 '$ln',
 													 '$em',

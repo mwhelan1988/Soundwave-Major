@@ -109,13 +109,13 @@ function nextSong() {
 //set repeat button
 function setRepeat() {
 	repeat = !repeat;
-	var imageName = repeat ? "repeat1.png" : "repeat.png";
+	var imageName = repeat ? "music-icons-07.png" : "music-icons-02.png";
 	$(".controlButton.repeat img").attr("src", "images/img-icons/" + imageName);
 }
 //set mute button
 function setMute() {
 	audioElement.audio.muted = !audioElement.audio.muted;
-	var imageName = audioElement.audio.muted ? "mute.png" : "volume.png";
+	var imageName = audioElement.audio.muted ? "music-icons-06.png" : "music-icons-05.png";
 	$(".controlButton.volume img").attr("src", "images/img-icons/" + imageName);
 }
 
@@ -123,7 +123,7 @@ function setMute() {
 //on click add shuffle, change icon
 function setShuffle() {
 	shuffle = !shuffle;
-	var imageName = shuffle ? "shuffle.png" : "shuffle-on.png";
+	var imageName = shuffle ? "music-icons-04.png" : "music-icons-09.png";
     $(".controlButton.shuffle img").attr("src", "images/img-icons/" + imageName);
     
 	if(shuffle == true) {
@@ -263,7 +263,7 @@ function pauseSong() {
                             <div class="buttons">
 
                                 <button class="controlButton shuffle" title="Shuffle Button" onclick="setShuffle()">
-                                    <img src="images/img-icons/shuffle-on.png" alt="shuffle">
+                                    <img src="images/img-icons/music-icons-04.png" alt="shuffle">
                                 </button>
                                                     
                             
@@ -278,7 +278,7 @@ function pauseSong() {
                                 <button class="controlButton next" title="Next Track" onclick="nextSong()"><i class="fas fa-step-forward fa-lg" alt="Next"></i></button>
                             
                                 <button class="controlButton repeat" title="Repeat Song" onclick="setRepeat()">
-                                <img src="images/img-icons/repeat.png" alt="Repeat">
+                                <img src="images/img-icons/music-icons-02.png" alt="Repeat">
                                 </button>
                             
                             </div>
@@ -302,7 +302,7 @@ function pauseSong() {
 
                     <div class="volumeBar">
                         <button class="controlButton volume" title="Volume Button" onclick="setMute()">
-                            <img src="images/img-icons/volume.png" alt="volume button">
+                            <img src="images/img-icons/music-icons-05.png" alt="volume button">
                         </button>
 
                         <div class="progressBar">

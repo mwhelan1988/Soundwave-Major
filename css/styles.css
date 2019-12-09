@@ -10876,6 +10876,15 @@ Main View Area
   padding: 0 20px;
 }
 
+#mainContent h1 {
+  margin: 25px 0;
+  color: #31302E;
+}
+
+.grid-view-container {
+  margin-bottom: 100px;
+}
+
 .griv-view-info {
   text-align: center;
   color: black;
@@ -10883,10 +10892,39 @@ Main View Area
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
+  background-color: #1FE5F5;
+  padding-top: 3px;
+  border-radius: 0 0 30px 30px;
+}
+
+.grid-view-item {
+  padding: 10px 0;
 }
 
 .grid-view-item a {
   text-decoration: none;
+}
+
+/* [1] The container */
+.grid-view-item {
+  height: 100%;
+  /* [1.1] Set it as per your need */
+  overflow: hidden;
+  /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.grid-view-item img {
+  -webkit-transition: -webkit-transform 1.5s ease;
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.grid-view-item:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 /**********************************
@@ -11167,6 +11205,7 @@ Now Playing
 
 [role="link"] {
   cursor: pointer;
+  color: #ffffff;
 }
 
 /**********************************
