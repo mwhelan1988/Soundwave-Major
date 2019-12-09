@@ -1,0 +1,630 @@
+$theme-colors: ("primary": #5CCBD7,
+"success": #ffffff,
+"info": #0098B4,
+"danger": #F51F1F,
+);
+
+
+
+@import "../scss/bootstrap";
+
+img {
+    max-width: 100%;
+}
+
+* {
+    font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+    background-color: rgba($color: #65E2F1, $alpha: .15);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+::placeholder {
+    color: #FFFFFF !important;
+}
+
+
+.btn-primary {
+    border-radius: 10px;
+    border: 2px solid #0098B4;
+    font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+.btn-primary:hover {
+   transition: .4s;
+   color: #31302E;
+}
+
+/**********************************
+*
+Landing Page (homepage)
+*
+**********************************/
+
+#topHeader {
+    background-image: url(/images/site-images/bruce-mars-DBGwy7s3QY0-unsplash@2x.jpg);
+    width: 100%;
+    height: 720px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .navbar-brand img {
+        position: relative;
+        left: 15px;
+        width: 300px;
+    }
+    .btn {
+        width: 120px;
+        font-size: 15px;
+        margin-right: 15px;
+    }
+}
+#topLogo {
+    width: 300px;
+}
+#homeNav {
+    background-color: rgba($color: #2C362E, $alpha: .35);
+    border-bottom: 2px solid #1FE5F5;
+    padding: 15px 0;
+}
+
+#navbarNav li {
+    text-decoration: none;
+    display: inline;
+    
+    a {
+        color: #ffffff !important; 
+        font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+}
+
+.nav-link {
+    padding: 0;
+}
+
+#navbarNav li a:hover {
+    color: #1FE5F5 !important;
+    
+}
+
+.homepage-heading {
+    margin-top: 200px;
+}
+
+
+/**********************************
+*
+REGISTRATION
+*
+**********************************/
+
+#myVideo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: slategray;
+  }
+
+#registerForm {
+    position: relative;
+    margin-top: 100px;
+    background-color: rgba($color: #2C362E, $alpha: .4);
+    padding: 50px 50px 20px 50px;
+    border-radius: 15px;
+
+    .btn {
+        width: 100%;
+        font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+    }
+    .btn-primary {
+        border: 1px solid #0098B4;
+        border-radius: 7px;
+    }
+    .btn:hover {
+        transition: .5s;
+    }
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, .45);
+    box-shadow: 4px 3px 3px 1px rgba(31, 229, 245, .15);
+    border-radius: 7px;
+    padding: 15px 7px 15px 7px;
+
+}
+
+.input-icons i { 
+    position: absolute; 
+    z-index: 10;
+    margin: 10px 0 0 10px;
+    color: #0098B4;  
+} 
+
+#firstName, #lastName, #email, #email2, #password, #password2, #loginEmail, #loginPassword {
+ padding-left: 35px;   
+}
+
+.register-link{
+    margin-top: 15px;
+    text-align: right;
+    a{
+        text-decoration: none;
+    }
+}
+
+.errorMessage {
+    color: #1FE5F5 !important;
+}
+
+/**********************************
+*
+LOGIN
+*
+**********************************/
+
+#loginBanner {
+    background-image: url(/images/site-images/headphones-banner.jpg);
+    width: 100%;
+    height: 720px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .navbar-brand img {
+        position: relative;
+        left: 15px;
+        width: 300px;
+    }
+}
+
+.login-icon {
+    width: 70px;
+}
+
+#loginForm {
+    position: relative;
+    margin-top: 130px;
+    background-color: rgba($color: #2C362E, $alpha: .4);
+    padding: 35px 50px 50px 50px;
+    border-radius: 15px;
+
+    .btn {
+        width: 100%;
+        font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+    }
+    .btn-primary {
+        border: 1px solid #0098B4;
+        border-radius: 7px;
+    }
+    .btn:hover {
+        transition: .5s;
+    }
+}
+
+/**********************************
+*
+Members Side Nav
+*
+**********************************/
+
+#topContainer {
+    min-height: 100%;
+    width: 100%;
+}
+
+#navbarContainer {
+    background-color: black;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 2px solid #1FE5F5;
+}
+
+.side-nav {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    // Below is for those internet explorer clowns :P
+    -ms-flex-direction: column;
+}
+
+.side-nav-icon {
+    width: 40px;
+    height: 100%;
+    padding: 30px 0 15px 0;
+    margin-left: 10px;
+}
+
+.side-nav .group {
+    margin-top: 20px;
+    border-top: 1px solid #1FE5F5;
+    padding: 20px 0 0 0;
+}
+
+.nav-item {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+}
+
+.search-icon i { 
+    position: absolute; 
+    z-index: 10;
+    margin: 10px 40px 0px 10px;
+    color: #1FE5F5; 
+    right: 0;
+}
+
+.nav-item {
+    color: #1FE5F5;
+    text-decoration: none !important;
+}
+.nav-item:hover {
+    color: #0098B4;
+    text-decoration: none !important;
+}
+
+
+
+/**********************************
+*
+Main View Area
+*
+**********************************/
+
+#mainViewContainer {
+    margin-left: 220px;
+    padding-bottom: 90px;
+    width: calc(100%-220px);
+}
+
+#mainContent {
+    padding: 0 20px;
+}
+
+.griv-view-info {
+    text-align: center;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.grid-view-item a {
+        text-decoration: none;
+}
+
+/**********************************
+*
+Main View Area (album selected)
+*
+**********************************/
+
+.entity-info {
+    padding: 40px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+
+    .left-section {
+        width: 30%;
+        float: left;
+        max-width: 200px;
+    }
+    .left-section img {
+        width: 100%;
+    }
+    .right-section {
+        width: 70%;
+        float: left;
+        padding: 0 10px 5px 40px;
+        box-sizing: border-box;
+    }
+    .right-section h2 {
+        margin-top: 0;
+        padding-top: 0;
+        color: #31302E;
+    }    
+    .artist-name {
+        color: #31302E;
+    }
+    p {
+        color: #31302E !important; 
+    }
+}
+.track-list {
+    padding: 0;
+}
+
+.track-list-row {
+    width: 100%;
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+    margin: 20px 0 20px 0;
+    span {
+        color: #31302E;
+    }
+    :hover {
+        background-color: #1FE5F5;
+    }
+    .track-count {
+        width: 8%;
+        float: left;
+        i {
+            width: 20px;
+            visibility: hidden;
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+    :hover .track-count i {
+        visibility: visible;
+    }
+    .track-count span {
+        visibility: visible;
+    }
+    :hover .track-count span {
+        visibility: hidden;
+    }
+    .track-info {
+        width: 75%;
+        float: left;
+    }
+    .track-info span {
+        display: block;
+    }
+    .track-options {
+        width: 5%;
+        float: left;
+        text-align: right;
+    }
+    
+}
+.artist-name {
+    font-size: 13px;
+}
+
+/**********************************
+*
+Artist Page
+*
+**********************************/
+
+.artistInfo {
+    text-align: center;
+} 
+
+.borderBottom{
+    border-bottom: 1px solid #31302E;
+    margin-bottom: 45px;
+}
+
+/**********************************
+*
+Now Playing 
+*
+**********************************/
+
+#nowPlayingBarContainer {
+    padding-bottom: 20px;
+    border-top: 2px solid #1FE5F5;
+    min-width: 620px;
+    background-color: #31302E;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#nowPlayingBar {
+    display: flex;
+    height: 90px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+  
+#nowPlayingLeft, #nowPlayingRight  {
+    width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingRight {
+    position: relative;
+    margin-top: 16px;
+} 
+
+#nowPlayingCenter {
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nowPlayingBar .content {
+    width: 100%;
+    height: 60px;
+}
+
+.player-controls .buttons {
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton {
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.repeat img {
+    width: 30px;
+    height: 100%;
+    max-width: none;
+}
+
+.volume img {
+    width: 25px;
+    height: 100%;
+    max-width: none;
+}
+
+.shuffle img {
+    width: 25px;
+    height: 100%;
+    max-width: none;
+}
+
+.progressTime {
+    color: #ffffff;
+    font-size: 11px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.playbackBar {
+    display: flex;
+}
+
+.progressBar {
+    width: 100%;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.progressBarBg {
+    background-color: #0098B4;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.progress {
+    background-color: #1FE5F5;
+    height: 4px;
+    width: 0%;
+    border-radius: 2px;
+}  
+
+.playbackBar .progressBar {
+    margin-top: 5px;
+}
+
+#nowPlayingLeft .album-artwork {
+    height: 100%;
+    max-width: 60px;
+    margin-right: 15px;
+    float: left;
+    background-size: cover;
+}
+
+.track-info {
+    display: table;
+}
+
+#nowPlayingLeft .track-info .track-name {
+    margin: 6px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+#nowPlayingLeft .track-info .artist-name {
+    font-size: 12px;
+}
+
+.volumeBar {
+    margin-top: 15px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar {
+    width: 125px;
+}
+
+//this will add pointer to all links I made in span tags
+[role="link"] {
+    cursor: pointer;
+}
+
+/**********************************
+*
+FOOTER
+*
+**********************************/
+
+.footer{
+    border-top: 2px solid #1FE5F5;
+    background-color: #31302E;
+}
+.footer-vinyl {
+    position: relative;
+    margin-top: 100px;
+}
+
+.footer-list {
+    margin-top: 20px;
+
+    li {
+        list-style-type: none;
+    }
+    a {
+    text-decoration: none;
+    color: #ffffff;
+    padding-top: 10px;
+    }
+    a:hover {
+    color: #1FE5F5;;
+    }
+}
+
+.footer-icons {
+    margin-top: 80px;
+    li {
+        list-style-type: none;
+        display: inline;
+        padding: 0 20px 20px 0;
+    }
+    a {
+        text-decoration: none;
+        color: #ffffff;  
+       
+    }
+    a:hover {
+        color: #1FE5F5;;
+        }
+}
+
+.footer-button a {
+    text-decoration: none;
+    transition: .3s;
+    }
+
+.footer-image  {
+    margin-top: 75px;
+}
+
