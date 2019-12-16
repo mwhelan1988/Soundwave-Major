@@ -4,7 +4,7 @@ include("includes/includedFiles.php");
 <div class="container">
     <div class="row">
 
-        <div class="col-md-2"></div>
+
 
         <div class="col-md-8">
             <div class="userDetails">
@@ -14,7 +14,7 @@ include("includes/includedFiles.php");
                     <div class="form-group">
                     <input type="text" class="email form-control" name="email" placeholder="Email Address." value="<?php echo $userLoggedIn->getEmail(); ?>">
                     <span class="message"></span>
-                    <button class="btn btn-primary button emailChangeBtn" onclick="updateEmail('email')">Update Email</button>
+                    <button class="btn btn-primary button emailChangeBtn updateButtons" onclick="updateEmail('email')">Update Email</button>
                     </div>
                 </div>
 
@@ -25,12 +25,19 @@ include("includes/includedFiles.php");
                     <input type="password" class="newPassword1 form-control passwordStyle" name="newPassword1" placeholder="New Password">
                     <input type="password" class="newPassword2 form-control passwordStyle" name="newPassword2" placeholder="Confirm New Password">
                     <span class="message"></span>
-                    <button class="btn btn-primary button passwordChangeBtn"  onclick="updatePassword('oldPassword', 'newPassword1', 'newPassword2')">Update Password</button>
+                    <button class="btn btn-primary button passwordChangeBtn updateButtons"  onclick="updatePassword('oldPassword', 'newPassword1', 'newPassword2')">Update Password</button>
                     </div>
                 </div>
 
+            <!-- <form action="/includes/handlers/edit_user.php" method="post"> -->
+                <div class="box">
+                    <button type="submit" name="action" value="delete" class="btn btn-text btn-outline-danger updateButtons">Delete Account</button>
+                </div>
+            <!-- </form> -->
+
+
             </div> <!--End of userDetails-->
         </div> <!--End of col-12-->
-        <div class="col-md-2"></div>
+        <div class="col-md-4"></div>
     </div> <!--End of row-->
 </div> <!--End of container-->

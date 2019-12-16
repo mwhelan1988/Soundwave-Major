@@ -11355,6 +11355,18 @@ SETTINGS
   color: #31302E !important;
 }
 
+.box h2 {
+  color: #31302E;
+}
+
+.box .updateButtons {
+  margin-top: 20px;
+}
+
+.box .passwordStyle {
+  margin-top: 20px;
+}
+
 /**********************************
 *
 FOOTER
