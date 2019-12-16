@@ -39,13 +39,13 @@ require_once("header.php");
                         <a class="nav-link top-link" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog.html">Membership</a>
+                        <a class="nav-link" href="#">Membership</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact.html">Our Music</a>
+                        <a class="nav-link" href="#">Our Music</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about.html">Contact</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
