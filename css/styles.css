@@ -10727,7 +10727,7 @@ REGISTRATION
   color: #0098B4;
 }
 
-#firstName, #lastName, #email, #email2, #password, #password2, #loginEmail, #loginPassword {
+#userName, #firstName, #lastName, #email, #email2, #password, #password2, #loginEmail, #loginPassword, #loginUsername {
   padding-left: 35px;
 }
 
@@ -10742,6 +10742,10 @@ REGISTRATION
 
 .errorMessage {
   color: #1FE5F5 !important;
+}
+
+.userDetails .message {
+  color: #1FE5F5;
 }
 
 /**********************************
@@ -10823,10 +10827,13 @@ Members Side Nav
   -ms-flex-direction: column;
 }
 
+.side-nav span {
+  width: 60px;
+}
+
 .side-nav-icon {
-  width: 40px;
-  height: 100%;
-  padding: 30px 0 15px 0;
+  width: 60px;
+  padding: 30px 0 15px 10px;
   margin-left: 10px;
 }
 
@@ -10873,7 +10880,8 @@ Main View Area
 }
 
 #mainContent {
-  padding: 0 20px;
+  padding: 0px;
+  margin-left: 50px;
 }
 
 #mainContent h1 {
@@ -10885,7 +10893,7 @@ Main View Area
   margin-bottom: 100px;
 }
 
-.griv-view-info {
+.grid-view-info {
   text-align: center;
   color: black;
   font-weight: 500;
@@ -10897,23 +10905,20 @@ Main View Area
   border-radius: 0 0 30px 30px;
 }
 
-.grid-view-item {
-  padding: 10px 0;
-}
-
 .grid-view-item a {
   text-decoration: none;
+}
+
+.grid-view-info {
+  margin-bottom: 25px;
 }
 
 /* [1] The container */
 .grid-view-item {
   height: 100%;
-  /* [1.1] Set it as per your need */
   overflow: hidden;
-  /* [1.2] Hide the overflowing of child elements */
 }
 
-/* [2] Transition property for smooth transformation of images */
 .grid-view-item img {
   -webkit-transition: -webkit-transform 1.5s ease;
   transition: -webkit-transform 1.5s ease;
@@ -10921,7 +10926,6 @@ Main View Area
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 
-/* [3] Finally, transforming the image when container gets hovered */
 .grid-view-item:hover img {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -10936,6 +10940,7 @@ Main View Area (album selected)
   padding: 40px 0 10px 0;
   display: inline-block;
   width: 100%;
+  margin-left: 50px;
 }
 
 .entity-info .left-section {
@@ -10975,51 +10980,50 @@ Main View Area (album selected)
 }
 
 .track-list-row {
-  width: 100%;
-  height: 40px;
-  padding: 15px 10px;
+  height: 60px;
+  padding: 10px 10px;
   list-style: none;
-  margin: 20px 0 20px 0;
 }
 
 .track-list-row span {
   color: #31302E;
+  font-weight: 200;
 }
 
-.track-list-row :hover {
+.track-list-row:hover {
   background-color: #1FE5F5;
 }
 
-.track-list-row .track-count {
+.track-list-row .track-Count {
   width: 8%;
   float: left;
 }
 
-.track-list-row .track-count i {
+.track-list-row .track-Count img {
   width: 20px;
   visibility: hidden;
   position: absolute;
   cursor: pointer;
 }
 
-.track-list-row :hover .track-count i {
+.track-list-row:hover .track-Count img {
   visibility: visible;
 }
 
-.track-list-row .track-count span {
+.track-list-row .track-Count span {
   visibility: visible;
 }
 
-.track-list-row :hover .track-count span {
+.track-list-row:hover .track-Count span {
   visibility: hidden;
 }
 
-.track-list-row .track-info {
+.track-list-row .track-Info {
   width: 75%;
   float: left;
 }
 
-.track-list-row .track-info span {
+.track-list-row .track-Info span {
   display: block;
 }
 
@@ -11029,8 +11033,69 @@ Main View Area (album selected)
   text-align: right;
 }
 
+.track-list-row .track-options img {
+  width: 15px;
+  visibility: hidden;
+}
+
+.track-list-row:hover .track-options img {
+  visibility: visible;
+}
+
+.track-list-row .track-duration {
+  width: 12%;
+  float: left;
+  text-align: right;
+}
+
+.track-list-row .track-info .track-name {
+  color: #31302E;
+  margin-bottom: 7px;
+}
+
 .artist-name {
   font-size: 13px;
+}
+
+.optionsMenu {
+  position: fixed;
+  background-color: #31302E;
+  width: 200px;
+  border: 3px solid #0098B4;
+  border-radius: 15px;
+  z-index: 10;
+  color: #ffffff;
+  display: none;
+}
+
+.optionsMenu .item {
+  width: 100%;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  height: 40px;
+  font-size: 14px;
+}
+
+.optionsMenu .item:hover {
+  color: #1FE5F5;
+  background-color: #2C362E;
+  border-color: #2C362E;
+  border-radius: 15px;
+}
+
+.optionsButton {
+  width: 20px;
+  text-align: right;
+}
+
+.optionsMenu select {
+  border: none;
+  -webkit-apperance: none;
+  -moz-appearance: none;
+  background-color: #2C362E;
 }
 
 /**********************************
@@ -11052,6 +11117,10 @@ Artist Page
 Now Playing 
 *
 **********************************/
+.br-on-mobile {
+  display: none;
+}
+
 #nowPlayingBarContainer {
   padding-bottom: 20px;
   border-top: 2px solid #1FE5F5;
@@ -11114,7 +11183,7 @@ Now Playing
 }
 
 .repeat img {
-  width: 30px;
+  width: 20px;
   height: 100%;
   max-width: none;
 }
@@ -11208,6 +11277,96 @@ Now Playing
   color: #ffffff;
 }
 
+[role="link"]:hover {
+  cursor: pointer;
+  color: #1FE5F5;
+}
+
+/**********************************
+*
+SEARCH PAGE
+*
+**********************************/
+.searchContainer {
+  background-color: #31302E;
+  padding: 20px;
+  width: 100%;
+  float: left;
+}
+
+.searchContainer .searchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #65E2F1;
+}
+
+input:focus {
+  outline: none;
+}
+
+/**********************************
+*
+MEMBER PLAYLIST AREA
+*
+**********************************/
+.yourPlaylist {
+  color: #31302E !important;
+}
+
+.playlistImage {
+  border: 2px solid #1FE5F5;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.track-list-container {
+  margin-top: 20px;
+}
+
+.artist-container, .grid-view-container, .track-list-container {
+  margin-left: 50px;
+}
+
+.artist-container h2, .grid-view-container h2, .track-list-container h2 {
+  color: #31302E;
+}
+
+.searchResultRow span {
+  color: #31302E;
+}
+
+/**********************************
+*
+SETTINGS
+*
+**********************************/
+.box .passwordStyle::-webkit-input-placeholder {
+  color: #31302E !important;
+}
+.box .passwordStyle:-ms-input-placeholder {
+  color: #31302E !important;
+}
+.box .passwordStyle::-ms-input-placeholder {
+  color: #31302E !important;
+}
+.box .passwordStyle::placeholder {
+  color: #31302E !important;
+}
+
+.box h2 {
+  color: #31302E;
+}
+
+.box .updateButtons {
+  margin-top: 20px;
+}
+
+.box .passwordStyle {
+  margin-top: 20px;
+}
+
 /**********************************
 *
 FOOTER
@@ -11268,5 +11427,216 @@ FOOTER
 
 .footer-image {
   margin-top: 75px;
+}
+
+/**********************************
+*
+MOBILE RESIZE 
+*
+**********************************/
+@media only screen and (max-width: 600px) {
+  #topLogo {
+    width: 200px;
+  }
+  .nav-item {
+    text-align: center;
+  }
+  .nav-item .top-link {
+    margin-top: 20px;
+  }
+  .homepage-heading {
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px #000000;
+  }
+  .home-btn {
+    text-align: center;
+    padding-top: 20px;
+  }
+  .footer-list, .footer-icons {
+    text-align: center;
+    -webkit-padding-start: 0px;
+            padding-inline-start: 0px;
+  }
+  .footer-icons {
+    margin-top: 10px;
+    padding-left: 25px;
+  }
+  #loginForm {
+    padding: 50px 50px 70px 50px;
+    margin-top: 80px;
+  }
+  #loginForm h2 {
+    font-size: 18px;
+  }
+  #loginForm .login-info {
+    padding: 20px 0px;
+  }
+  .footer-image {
+    margin: 20px 0px;
+  }
+  .input-pad {
+    padding-bottom: 15px;
+  }
+  #registerBanner #topLogo {
+    padding-left: 30px;
+  }
+  #registerForm h2 {
+    font-size: 20px;
+    margin-bottom: 15px !important;
+  }
+  #registerForm h2 .mb-5 {
+    margin: none !important;
+  }
+  .footer-button {
+    margin-bottom: 25px;
+  }
+  #navbarContainer {
+    background-color: black;
+    width: 120px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 2px solid #1FE5F5;
+  }
+  .side-nav-icon {
+    margin: 0;
+  }
+  .fa-search:before {
+    display: none !important;
+  }
+  #topContainer {
+    width: 300px;
+  }
+  #nowPlayingBarContainer {
+    padding-bottom: 20px;
+    border-top: 2px solid #1FE5F5;
+    min-width: 420px;
+    background-color: #31302E;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 11;
+  }
+  #nowPlayingBar {
+    padding: 0;
+    padding-top: 20px;
+    margin-left: 20px;
+    width: 300px;
+  }
+  #nowPlayingLeft {
+    display: none;
+  }
+  #nowPlayingRight {
+    display: none;
+  }
+  #nowPlayingCenter {
+    width: 100%;
+    text-align: center;
+  }
+  #mainContent h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 50px;
+  }
+  #mainViewContainer {
+    margin-left: 50px;
+  }
+  .buttonItems {
+    margin: 30px 0 0 50px;
+  }
+  .top-button {
+    margin-bottom: 30px;
+  }
+  .inner-btn {
+    padding: 10px 40px 10px 40px;
+  }
+  .buttonItemsMusic {
+    width: 200px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+  }
+  .playlistImage {
+    margin: 0;
+    width: 200px;
+  }
+  .entity-info {
+    margin-left: 35px;
+  }
+  .entity-info h2 {
+    font-size: 15px;
+  }
+  .entity-info p {
+    font-size: 13px;
+  }
+  .track-number {
+    display: none;
+  }
+  .track-info {
+    margin-left: 45px;
+  }
+  .track-list-row .track-Count img {
+    width: 20px;
+    visibility: visible;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    background-color: #31302E;
+    border-radius: 20px;
+    margin-left: 0px;
+  }
+  .track-duration {
+    display: none;
+  }
+  .track-list-row {
+    height: 120px;
+  }
+  .track-list-container {
+    margin-left: 10px;
+    width: 250px;
+  }
+  .track-list-row:hover {
+    width: 100%;
+    border-right: 2px solid #0098B4;
+  }
+  .userDetails {
+    margin-left: 20px;
+    width: 220px;
+  }
+  .userDetails h2 {
+    color: #31302E;
+  }
+  .userDetails .passwordStyle, .userDetails .passwordChangeBtn, .userDetails .emailChangeBtn {
+    margin-top: 20px;
+  }
+  .userDetails .EmailSetTitle {
+    margin-top: 40px;
+  }
+  .yourPlaylist {
+    font-size: 15px;
+  }
+  .searchContainer {
+    margin-left: 20px;
+    width: 250px;
+  }
+  .search-area {
+    font-size: 16px;
+  }
+  .track-list-container h2 {
+    margin-left: 50px;
+    padding-top: 150px;
+  }
+  .track-list {
+    margin-left: 40px;
+  }
+  .artistName {
+    margin-left: 0px !important;
+    color: #31302E;
+  }
+  .musicDetailsEdit {
+    color: #31302E;
+    margin-left: 50px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

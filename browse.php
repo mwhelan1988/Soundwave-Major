@@ -1,6 +1,5 @@
 <?php 
 include("includes/includedFiles.php"); 
-    
 ?>
 
 <h1>You Might Also Like</h1>
@@ -9,20 +8,24 @@ include("includes/includedFiles.php");
     <div class="row">
 
         <?php
-            $albumQuery = mysqli_query($conn, "SELECT * FROM albums ORDER BY RAND() LIMIT 12");
+            $albumQuery = mysqli_query($conn, "SELECT * FROM albums ORDER BY RAND() LIMIT 20");
 
             while($row = mysqli_fetch_array($albumQuery)) {
 
                 
 
-                echo "<div class='grid-view-item'>
+                echo "
+              
+                <div class='grid-view-item'>
                 <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
                         <img src='" . $row['artworkPath'] . "'>
                   
-                        <div class='griv-view-info'>"
+                        <div class='grid-view-info'>"
                             . $row['title'] . 
                         "</div>
                     </span>
+       
+            
                 </div>";
             }
         ?>

@@ -19,9 +19,11 @@
 				<div class="group">
 					<div class="nav-item"><span role="link" tabindex="0" onclick="openPage('browse.php')" class="nav-item-link" href="browse.php">Browse</span></div>
 
-					<div class="nav-item"><span role="link" tabindex="0" onclick="openPage('yourmusic.php')" class="nav-item-link" href="yourmusic.php">Your Library</span></div>
+					<div class="nav-item"><span role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="nav-item-link" href="yourMusic.php">Library</span></div>
 
-					<div class="nav-item"><span role="link" tabindex="0" onclick="openPage('profile.php')" class="nav-item-link" href="profile.php">Profile</span></div>
+					<div class="nav-item"><span role="link" tabindex="0" onclick="openPage('settings.php')" class="nav-item-link" href="profile.php">Settings</span></div>
+
+					<div class="nav-item"><span role="link" tabindex="0" onclick="logout()" class="nav-item-link" href="profile.php">Logout</span></div>
 				</div>
 
 			</nav>

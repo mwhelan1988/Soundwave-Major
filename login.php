@@ -57,18 +57,18 @@ function getInputValue($name) {
 			<div class="col-md-3"><!--Leave Empty--></div>
 				<div class="col-md-6">
 			
-					<form id="loginForm" action="login.php" method="POST">
+					<form id="loginForm" class="" action="login.php" method="POST">
 						<div class="text-center">
 							<img class="login-icon" src="/images/site-images/soundwave-icon.png" alt="Soundwave Symbol mark, on transparent background">
 						</div>
 						
-						<h2 class="my-3">Login to your account</h2>
+						<h2 class="my-3 login-info">Login to your account</h2>
 						
 						<div class="form-group">
-					 	 <?php echo $account->getError(Constants::$loginFailed); ?>
-						  <div class="input-icons">
-							    <i class="fas fa-envelope icons"></i>
-							<input class="form-control" id="loginEmail" name="loginEmail" type="text" placeholder="Enter Email" value="<?php getInputValue ('loginEmail')?>" required>
+						<?php echo $account->getError(Constants::$loginFailed); ?>
+						<div class="input-icons">
+							<i class="fab fa-napster"></i>
+							<input class="form-control" id="loginUsername" name="loginUsername" type="text" placeholder="Enter username" value="<?php getInputValue ('loginUsername')?>" required>
 						  </div>
 						</div>
 

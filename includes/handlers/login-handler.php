@@ -1,12 +1,12 @@
 <?php
 if(isset($_POST['loginButton'])) {
 	//Login button was pressed
-	$email 	  = $_POST['loginEmail'];
+	$username 	  = $_POST['loginUsername'];
 	$password = $_POST['loginPassword'];
 
-	$result = $account ->login($email, $password);
+	$result = $account ->login($username, $password);
 	if($result == true) {
-		$_SESSION['userLoggedIn'] = $email;
+		$_SESSION['userLoggedIn'] = $username;
 		header("Location: browse.php");
 	} 
 }

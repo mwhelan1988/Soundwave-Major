@@ -8,11 +8,11 @@
 			$this->errorArray = array();
 		}
 
-		public function login($em, $pw) {
+		public function login($un, $pw) {
 
 			$pw = md5($pw);
 
-			$query = mysqli_query($this->conn, "SELECT * FROM users WHERE email='$em' AND password='$pw'");
+			$query = mysqli_query($this->conn, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
 
 			if(mysqli_num_rows($query) == 1) {
 				return true;
@@ -24,7 +24,8 @@
 
 		}
 
-		public function register($fn, $ln, $em, $em2, $pw, $pw2) {
+		public function register($un, $fn, $ln, $em, $em2, $pw, $pw2) {
+			$this->validateUsername($un);
 			$this->validateFirstName($fn);
 			$this->validateLastName($ln);
 			$this->validateEmails($em, $em2);
@@ -32,7 +33,7 @@
 
 			if(empty($this->errorArray) == true) {
 				//Insert into database
-				return $this->insertUserDetails($fn, $ln, $em, $pw);
+				return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
 			}
 			else {
 				return false;
@@ -47,7 +48,7 @@
 			return "<span class='errorMessage'>$error</span>";
 		}
 
-		private function insertUserDetails($fn, $ln, $em, $pw) {
+		private function insertUserDetails($un, $fn, $ln, $em, $pw) {
 			$encryptedPw = md5($pw); 
 			$profilePic = "images/profile-pics/profilepic-template.jpg";
 			$date = date ("Y-m-d");
@@ -55,6 +56,7 @@
 			$result = mysqli_query($this->conn, "INSERT INTO users 
 
 												(
+												userName,
 												firstName,
 												lastName,
 												email,
@@ -66,6 +68,7 @@
 
 												 VALUES
 												 	(
+													 '$un',
 													 '$fn',
 													 '$ln',
 													 '$em',
@@ -76,6 +79,22 @@
 													 )");
 																	
 			return $result;
+
+		}
+
+
+		private function validateUsername($un) {
+
+			if(strlen($un) > 25 || strlen($un) < 3) {
+				array_push($this->errorArray, Constants::$usernameCharacters);
+				return;
+			}
+
+			$checkUsernameQuery = mysqli_query($this->conn, "SELECT username FROM users WHERE username='$un'");
+			if(mysqli_num_rows($checkUsernameQuery) != 0) {
+				array_push($this->errorArray, Constants::$usernameTaken);
+				return;
+			}
 
 		}
 
