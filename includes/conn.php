@@ -2,7 +2,11 @@
 ob_start();
 session_start();
 
-$timezone = date_default_timezone_set("	America/Vancouver");
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 
 if($_SERVER["SERVER_NAME"] == "dev.whelandesigns.com") {
     //Production -  Connects to PLESK databse **

@@ -20,6 +20,8 @@
 require_once("header.php");
 ?>
 
+
+
 <header id="registerBanner">
 	<video autoplay muted loop id="myVideo">
 		<source src="/images/site-images/vinyl-video.mp4" type="video/mp4">
@@ -67,10 +69,22 @@ require_once("header.php");
 						<form id="registerForm" action="register.php" method="POST">
 							<h2 class="mb-5 text-center">Create your account <br>
 							and start listening</h2>
+
+
+							<div class="form-group">
+								<?php echo $account->getError(Constants::$usernameCharacters); ?>
+								<?php echo $account->getError(Constants::$usernameTaken); ?>
+									<div class="input-icons">
+									   <i class="fab fa-napster"></i>
+									   <input class="form-control" id="userName" name="username" type="text" placeholder="Enter Username" value="<?php getInputValue('username') ?>" required>
+							  	</div>
+							</div>
+
+						
 	
 							<div class="form-group">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-md-6 input-pad">
 											<?php echo $account->getError(Constants::$firstNameCharacters); ?>
 										  <div class="input-icons">
 											<i class="fas fa-user icons"></i>
@@ -78,7 +92,7 @@ require_once("header.php");
 										  </div>
 										</div>
 
-									<div class="col-6">
+									<div class="col-md-6">
 										<?php echo $account->getError(Constants::$lastNameCharacters); ?>
 									  <div class="input-icons">
 										<i class="fas fa-user icons"></i>
@@ -172,13 +186,19 @@ require_once("header.php");
 				<form id="footerLoginForm" action="login.php" method="POST">
 
 						<?php echo $account->getError(Constants::$loginFailed); ?>
-					
-					<div class="form-group">
-						<input class="form-control" id="loginEmail" name="loginEmail" type="text" placeholder="Enter Email" required>
+
+					<div class="input-icons">
+						<i class="fab fa-napster"></i>
+						<div class="form-group">
+							<input class="form-control" id="loginUsername" name="loginUsername" type="text" placeholder="Enter Username" required>
+						</div>
 					</div>
-		
-					<div class="form-group">
-						<input class="form-control" id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+
+					<div class="input-icons">
+						<i class="fas fa-lock icons"></i>
+						<div class="form-group">
+							<input class="form-control" id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+						</div>
 					</div>
 
 					
@@ -194,6 +214,7 @@ require_once("header.php");
 		</div>
 	</div>
 </footer>
+
 
 <?php
 require_once("footer.php");

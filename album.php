@@ -31,33 +31,48 @@ $artist = $album->getArtist();
 		 //gets list of song ids for album
 		$songIdArray = $album->getSongIds();
 
+
 		$i=1;
 		foreach($songIdArray as $songId){
 			$albumSong = new Song($conn, $songId);
 			$albumArtist = $albumSong->getArtist();
 			echo "<li class='track-list-row'>
 
-				<div class='container'>
-					<div class='row'>
+					<div class='container'>
+						<div class='row'>
+							<div class='col-md-2'>
+					
+								<div class='track-count'>
+									<img class='play' src='images/img-icons/tiny-play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
+										<span class='track-number'>$i</span>
+								</div>
+							</div>
+								
 
-						<div class='track-count'>
-								<i class='fas fa-play' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'></i>
-								<span class='track-number'>$i</span>
+								<div class='col-md-6'>
+
+								<div class='track-info'>
+									<span class='track-name'>" . $albumSong->getTitle() . " </span>
+									<span class='artist-name'>" . $albumArtist->getName() . "</span>
+								</div>
+
+								</div>
+
+								<div class='col-md-2'>
+									<div class=''track-options> 
+										<input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+										<img class='optionsButton' src='images/img-icons/more-icon-13.png' onclick='showOptionsMenu(this)'>						
+									</div>
+								</div>
+
+								<div class='col-md-2'>
+									<div class='track-duration'>
+										<span class='duration'>" . $albumSong->getDuration() . "</span>
+									</div>
+								</div>
+							
 						</div>
-
-						<div class='track-info'>
-							<span class='track-name'>" . $albumSong->getTitle() . " </span>
-							<span class='artist-name'>" . $albumArtist->getName() . "</span>
-						</div>
-
-						<div class=''track-options> <i class='fas fa-ellipsis-h fa-lg dot-icon'></i></div>
-		
-						<div class='track-duration'>
-							<span class='duration'>" . $albumSong->getDuration() . "</span>
-						</div>
-
 					</div>
-				</div>
 			</li>
 			";
 			$i = $i+1;
@@ -71,6 +86,12 @@ $artist = $album->getArtist();
 
 	</ul>
 </div>
+
+<nav class="optionsMenu">
+		<input type="hidden" class="songId">
+
+		<?php echo Playlist::getPlaylistsDropdown($conn, $userLoggedIn->getUsername()); ?>	
+</nav>
 
 
 

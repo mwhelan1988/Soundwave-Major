@@ -177,19 +177,19 @@ function setTrack(trackId, newPlaylist, play) {
     //get artist name, put in now playing footer
     $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
         var artist = JSON.parse(data);
-        $(".artist-name span").text(artist.name);
+        $(".track-info .artist-name span").text(artist.name);
         //make onclick in footer artist name
-        $(".artist-name span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
+        $(".track-info .artist-name span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
     });
 
     //get album image, put in now playing footer
     $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
         var album = JSON.parse(data);
-        $(".album-link img").attr("src", album.artworkPath);
+        $(".content .album-link img").attr("src", album.artworkPath);
         //make onclick in footer album icon
-        $(".album-link img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+        $(".content .album-link img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
         //make onlcik in footer for album name 
-        $(".track-name span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+        $(".track-info .track-name span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
     });
 
     //set track
@@ -255,6 +255,8 @@ function pauseSong() {
                     </div>
                 </div>
 
+    <br class="br-on-mobile">
+
                 <div id="nowPlayingCenter">
 
                         <div class="content player-controls">
@@ -298,6 +300,8 @@ function pauseSong() {
                         </div>
                     </div>
 
+    <br class="br-on-mobile">
+
                 <div id="nowPlayingRight">
 
                     <div class="volumeBar">
@@ -321,5 +325,6 @@ function pauseSong() {
 </div>
 
 </div>  <!--End #NowPlayingBarContainer-->
+
 
 

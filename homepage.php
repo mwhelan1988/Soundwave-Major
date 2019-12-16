@@ -36,7 +36,7 @@ require_once("header.php");
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link top-link" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/blog.html">Membership</a>
@@ -57,9 +57,11 @@ require_once("header.php");
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                  <h1 class="homepage-heading">The best music <br> in the world, <br> all in one place.</h1>
-                 <a href="/register.php"><button class="btn btn-primary">Sign Up</button></a>
-                 <a href="/login.php"><button class="btn btn-primary">Log In</button></a>
+				<h1 class="homepage-heading">The best music <br> in the world, <br> all in one place.</h1>
+				  <div class="home-btn">
+                 	<a href="/register.php"><button class="btn btn-primary">Sign Up</button></a>
+				 	<a href="/login.php"><button class="btn btn-primary">Log In</button></a>
+				 </div>
             </div>
             <div class="col-md-7"></div>
         </div>
