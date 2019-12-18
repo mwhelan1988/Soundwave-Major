@@ -61,7 +61,7 @@ $artist = $album->getArtist();
 								<div class='col-md-2'>
 									<div class=''track-options> 
 										<input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
-										<img class='optionsButton' src='images/img-icons/more-icon-13.png' onclick='showOptionsMenu(this)'>						
+										<img class='optionsButton' src='images/img-icons/more-icon-13.png' onclick='showOptionsMenu(this)'>	
 									</div>
 								</div>
 

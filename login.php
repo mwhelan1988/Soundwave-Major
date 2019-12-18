@@ -36,14 +36,14 @@ function getInputValue($name) {
 							<a class="nav-link" href="/homepage.php">Home<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Membership</a>
+							<a class="nav-link" href="/register.php">Membership</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Our Music</a>
+							<a class="nav-link" href="/musicChoices.php">Our Music</a>
 						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="#">Contact</a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 
