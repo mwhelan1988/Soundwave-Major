@@ -35,18 +35,18 @@ require_once("header.php");
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <!-- <li class="nav-item active">
                         <a class="nav-link top-link" href="#">Home<span class="sr-only">(current)</span></a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Membership</a>
+                        <a class="nav-link" href="/register.php">Membership</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Our Music</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 

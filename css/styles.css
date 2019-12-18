@@ -11091,6 +11091,10 @@ Main View Area (album selected)
   text-align: right;
 }
 
+.optionsButton:hover {
+  cursor: pointer !important;
+}
+
 .optionsMenu select {
   border: none;
   -webkit-apperance: none;
